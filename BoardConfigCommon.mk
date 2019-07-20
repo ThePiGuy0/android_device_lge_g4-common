@@ -204,7 +204,7 @@ PRODUCT_AAPT_CONFIG := normal hdpi xhdpi xxhdpi 560dpi xxxhdpi
 PRODUCT_AAPT_PREF_CONFIG := 560dpi
     
 # Sepolicy
-include device/qcom/sepolicy/sepolicy.mk
+include vendor/omni/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
 BOARD_SEPOLICY_VERS := $(PLATFORM_SDK_VERSION).0
