@@ -1,2 +1,0 @@
-allow crash_dump gatekeeper_data_file:dir search;
-allow crash_dump tmpfs:dir search;
