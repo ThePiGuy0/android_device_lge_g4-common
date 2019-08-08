@@ -19,6 +19,8 @@ COMMON_PATH := device/lge/g4-common
 
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
+LLVM_ENABLE_THREADS := true
+
 # Arch
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -88,11 +90,6 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_CUSTOM_BT_CONFIG := device/lge/g4-common/bluetooth/libbt_vndcfg.txt
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/g4-common/bluetooth
 
-# Boot animation
-TARGET_SCREEN_HEIGHT := 2560
-TARGET_SCREEN_WIDTH := 1440
-TARGET_BOOTANIMATION_HALF_RES := true
-
 # CAF
 TARGET_QCOM_DISPLAY_VARIANT := caf-msm8994
 TARGET_QCOM_AUDIO_VARIANT := caf-msm8994
@@ -120,6 +117,7 @@ TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_HWC2 := true
 VSYNC_EVENT_PHASE_OFFSET_NS := 7500000
+TARGET_MSM8974_1440P_EGL_WORKAROUND := true
 
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
@@ -158,7 +156,7 @@ TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
 # Kernel
 BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive
-BOARD_KERNEL_CMDLINE += console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom androidboot.wificountrycode=us
+BOARD_KERNEL_CMDLINE += console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom
 BOARD_KERNEL_CMDLINE += user_debug=31 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 msm_rtb.filter=0x37 boot_cpus=0-5 lge_monitor_thermal.enable=1
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
@@ -188,6 +186,7 @@ TARGET_BOARD_PLATFORM := msm8992
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno418
 TARGET_BOOTLOADER_BOARD_NAME := MSM8992
 TARGET_NO_BOOTLOADER := true
+TARGET_USES_QCOM_BSP := true
 
 # Power
 WITH_LINEAGE_CHARGER := false
@@ -195,6 +194,7 @@ BOARD_CHARGER_DISABLE_INIT_BLANK := true
 BOARD_CHARGER_ENABLE_SUSPEND := false
 BACKLIGHT_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TARGET_HAS_NO_WLAN_STATS := true
+TARGET_HAS_NO_POWER_STATS := true
 TARGET_BOOTANIMATION_MULTITHREAD_DECODE := true
 
 # QCOM
