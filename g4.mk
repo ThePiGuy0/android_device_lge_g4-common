@@ -116,7 +116,9 @@ PRODUCT_PACKAGES += \
 
 # F-droid
 WITH_FDROID := true
-$(call inherit-product-if-exists, vendor/fdroid/fdroid-vendor.mk)
+PRODUCT_PACKAGES += \
+    F-Droid \
+    FDroidPrivilegedExtension
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(LOCAL_PATH)/config.fs
@@ -377,7 +379,7 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/wifi/bcmdhd.cal:system/etc/wifi/bcmdhd.cal
+    $(LOCAL_PATH)/wifi/bcmdhd.cal:system/vendor/etc/wifi/bcmdhd.cal
 
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4339/device-bcm.mk)
 
